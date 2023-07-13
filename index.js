@@ -32,7 +32,7 @@ const covidModel = mongoose.model(collectionName, new mongoose.Schema({}), colle
 
 app.get("/", (req, res) => {
     covidModel.find({}).then((data) => {
-        res.send(data);
+        res.send(data[0]);
     }).catch((err) => {
         res.send(err);
     });
